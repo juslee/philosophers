@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 13:11:09 by welee             #+#    #+#             */
-/*   Updated: 2024/09/08 17:15:06 by welee            ###   ########.fr       */
+/*   Updated: 2024/09/09 00:17:12 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@
 static void	log_philosopher_death(t_philosopher *philosopher)
 {
 	pthread_mutex_lock(&philosopher->config->print_mutex);
-	printf("%ld %d died\n", get_time_in_ms(), philosopher->id);
+	printf("%ld %d died\n", get_time_in_ms() - philosopher->config->start_time,
+		philosopher->id);
 	pthread_mutex_unlock(&philosopher->config->print_mutex);
 	philosopher->config->philo_dead = 1;
 }

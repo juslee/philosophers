@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:53:20 by welee             #+#    #+#             */
-/*   Updated: 2024/09/08 17:03:07 by welee            ###   ########.fr       */
+/*   Updated: 2024/09/09 00:14:17 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdio.h>
 # include <stdlib.h>
-# include <limits.h>
 # include <pthread.h>
 # include <unistd.h>
 # include <sys/time.h>
@@ -31,6 +30,7 @@ typedef struct s_philo_config
 	int				philo_dead;
 	pthread_mutex_t	print_mutex;
 	pthread_mutex_t	state_mutex;
+	long			start_time;
 }	t_philo_config;
 
 // Structure to hold philosopher data

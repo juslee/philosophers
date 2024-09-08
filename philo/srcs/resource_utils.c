@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:56:28 by welee             #+#    #+#             */
-/*   Updated: 2024/09/08 17:16:17 by welee            ###   ########.fr       */
+/*   Updated: 2024/09/09 00:15:35 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	init_philosophers(t_philosopher *philosophers,
 		philosophers[i].last_meal_time = get_time_in_ms();
 		i++;
 	}
+	config->start_time = get_time_in_ms();
 }
 
 /**

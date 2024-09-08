@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:25:09 by welee             #+#    #+#             */
-/*   Updated: 2024/09/08 11:38:45 by welee            ###   ########.fr       */
+/*   Updated: 2024/09/08 17:44:38 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
  */
 
 #include "philo.h"
+#include <limits.h>
 
 /**
  * @brief Check if the character is a space.

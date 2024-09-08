@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:01:57 by welee             #+#    #+#             */
-/*   Updated: 2024/09/08 16:42:45 by welee            ###   ########.fr       */
+/*   Updated: 2024/09/09 00:16:15 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	print_status(t_philosopher *philo, const char *status)
 {
 	pthread_mutex_lock(&philo->config->print_mutex);
 	if (!philo->config->philo_dead)
-		printf("%ld %d %s\n", get_time_in_ms(), philo->id, status);
+		printf("%ld %d %s\n", get_time_in_ms() - philo->config->start_time,
+			philo->id, status);
 	pthread_mutex_unlock(&philo->config->print_mutex);
 }

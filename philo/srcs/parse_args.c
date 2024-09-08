@@ -6,7 +6,7 @@
 /*   By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 11:10:58 by welee             #+#    #+#             */
-/*   Updated: 2024/09/08 15:29:04 by welee            ###   ########.fr       */
+/*   Updated: 2024/09/08 20:23:19 by welee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 static int	validate_args(t_philo_config *config, int argc)
 {
 	if (config->number_of_philosophers <= 0 || config->time_to_die <= 0
-		|| config->time_to_eat <= 0 || config->time_to_sleep <= 0
-		|| (argc == 6
-			&& config->number_of_times_each_philosopher_must_eat < 0))
+		|| config->time_to_eat <= 0 || config->time_to_sleep <= 0)
 	{
-		printf("Error: Invalid argument(s).\n");
+		printf("Error: All arguments must be positive integers.\n");
+		return (0);
+	}
+	if (argc == 6 && config->number_of_times_each_philosopher_must_eat < 0)
+	{
+		printf("Error: 'number_of_times_each_philosopher_must_eat' "
+			"must be a positive integer.\n");
 		return (0);
 	}
 	return (1);

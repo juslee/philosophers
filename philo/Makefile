@@ -6,7 +6,7 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/07 04:39:46 by welee             #+#    #+#              #
-#    Updated: 2024/09/07 04:47:47 by welee            ###   ########.fr        #
+#    Updated: 2024/09/08 16:52:15 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,12 @@ CFLAGS = -Wall -Wextra -Werror
 LDFLAGS = -lpthread
 RM = rm -f
 MKDIR = mkdir -p
+ECHO = echo
 
 SRCS_DIR = srcs
 OBJS_DIR = objs
 INCS_DIR = includes
-BINS_DIR = bins
+BINS_DIR = bin
 TEST_DIR = tests
 DIST_DIR = dist
 

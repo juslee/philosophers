@@ -6,11 +6,11 @@
 #    By: welee <welee@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/07 04:39:46 by welee             #+#    #+#              #
-#    Updated: 2024/09/18 17:03:57 by welee            ###   ########.fr        #
+#    Updated: 2024/09/18 17:04:32 by welee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = $(BINS_DIR)/philo_bonus
+NAME = philo
 SRCS = $(wildcard $(SRCS_DIR)/*.c)
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 
@@ -60,7 +60,7 @@ DOXYGEN_CONF = Doxyfile
 # Rules Definitions ---------------------------------------------------------- #
 all: $(NAME)
 
-$(NAME): $(OBJS) | $(BINS_DIR)
+$(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 	@$(ECHO) "\033[32m$(NAME) compiled\033[0m"
 
@@ -90,9 +90,8 @@ dist: fclean
 	$(MKDIR) $(DIST_DIR)
 	$(CP) $(SRCS_DIR) $(INCS_DIR) $(DIST_DIR)
 	$(CP) Makefile $(DIST_DIR)
-	$(SED) 's|^NAME = $$(BINS_DIR)/philo_bonus$$|NAME = philo_bonus|' $(DIST_DIR)/Makefile
+	$(SED) 's|^NAME = $$(BINS_DIR)/philo$$|NAME = philo|' $(DIST_DIR)/Makefile
 	$(SED) '/^\$$(NAME):/ s/ | $$(BINS_DIR)//' $(DIST_DIR)/Makefile
-	@$(ECHO) "\033[32mDistribution files copied\033[0m"
 
-.PHONY: all clean fclean re norm tests doxygen dist
+.PHONY: all clean fclean re norm tests dist
 # ---------------------------------------------------------------------------- #

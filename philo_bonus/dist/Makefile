@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = $(BINS_DIR)/philo_bonus
+NAME = philo_bonus
 SRCS = $(wildcard $(SRCS_DIR)/*.c)
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 
@@ -60,7 +60,7 @@ DOXYGEN_CONF = Doxyfile
 # Rules Definitions ---------------------------------------------------------- #
 all: $(NAME)
 
-$(NAME): $(OBJS) | $(BINS_DIR)
+$(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 	@$(ECHO) "\033[32m$(NAME) compiled\033[0m"
 
